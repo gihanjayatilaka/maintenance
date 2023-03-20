@@ -1,0 +1,29 @@
+{
+    "kepler" : {
+        "0":{
+            "model":"Tesla K40c",
+            "memory":11441
+        },
+        "1":{
+            "model":"Quadro K620",
+            "memory":2000
+        }
+    },
+    "turing" : {
+        "0":{
+            "model":"GeForcee 3080Ti",
+            "memory":24564
+        }
+    },
+
+    "ai4covid" : {
+        "0":{
+            "model":"Quadro GV100",
+            "memory":32768
+        },
+        "1":{
+            "model":"Quadro GV100",
+            "memory":32768
+        }
+    }
+}
