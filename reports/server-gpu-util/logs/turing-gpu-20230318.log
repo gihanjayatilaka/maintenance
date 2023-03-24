@@ -1,4 +1,4 @@
-index, timestamp, power.draw [W], temperature.gpu, utilization.gpu [%], memory.used [MiB]
+gpuid, timestamp, power.draw [W], temperature.gpu, utilization.gpu [%], memory.used [MiB]
 0, 2023/03/18 00:00:03.529, 177.20 W, 56, 100 %, 7816 MiB
 0, 2023/03/18 00:01:03.532, 170.94 W, 56, 100 %, 7749 MiB
 0, 2023/03/18 00:02:03.533, 174.84 W, 56, 97 %, 7470 MiB
