@@ -1,4 +1,4 @@
-rm ../../reports/server-gpu-util/logs/*.jpeg
+rm ../../reports/server-gpu-util/plots/*.jpeg
 ./download-logs.sh
 python generate-graphs.py
 cd ../../
