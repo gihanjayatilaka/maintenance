@@ -55,6 +55,7 @@ if __name__=="__main__":
 
 
     for s in data:
+        data[s].head()
         data[s] = data[s].groupby(data[s].timestamp.dt.floor("D")).mean()
 
 
