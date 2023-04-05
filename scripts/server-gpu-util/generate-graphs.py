@@ -35,8 +35,12 @@ if __name__=="__main__":
 
     
     for s in SERVERS:
+        print(s)
         data[s] = data[s].rename(columns=lambda x: x.strip())
         
+        data[s] = data[s][data[s]["gpuid"].apply(lambda x: str(x).isdigit())] #Keep only rows where GPUID \in int 
+
+
         data[s]["timestamp"] = data[s]["timestamp"].apply(pd.to_datetime)
         data[s]["power.draw [W]"] = data[s]["power.draw [W]"].apply(lambda x: float(x.replace(" W","")))
         data[s]["utilization.gpu [%]"] = data[s]["utilization.gpu [%]"].apply(lambda x: float(x.replace(" %","")))
@@ -51,6 +55,7 @@ if __name__=="__main__":
 
 
     for s in data:
+        data[s].head()
         data[s] = data[s].groupby(data[s].timestamp.dt.floor("D")).mean()
 
 
