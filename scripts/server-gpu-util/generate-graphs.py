@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+from datetime import timedelta
 
 
 SERVERS = ["turing","kepler","ai4covid"]
@@ -11,6 +12,13 @@ OUT_FOLDER = "../../reports/server-gpu-util/plots/"
 
 
 if __name__=="__main__":
+
+    # print()
+
+    t0 = pd.datetime.now()
+    refinedDateRage = pd.date_range(start= t0 - pd.Timedelta(30, unit='d'), end= t0, freq="D").floor("D")
+
+
     data = {}
     JSON = json.load(open(JSON_FILE))
     
@@ -57,6 +65,11 @@ if __name__=="__main__":
     for s in data:
         data[s].head()
         data[s] = data[s].groupby(data[s].timestamp.dt.floor("D")).mean()
+        data[s] = data[s].reindex(refinedDateRage,fill_value=0)
+        data[s] = data[s].tail(30)
+
+        print(data[s])
+        print("---------------")
 
 
     for s in data:
@@ -68,7 +81,8 @@ if __name__=="__main__":
         ax.right_ax.set_ylabel("memory.used [MiB]",color="b")
         ax.right_ax.set_ylim(0,JSON[s.split("-")[0]][s.split("-")[1]]["memory"])
         ax.get_legend().remove()
-
+        
+        
         plt.savefig(OUT_FOLDER+"/"+"plot{}.jpeg".format(s),bbox_inches='tight')
             
 

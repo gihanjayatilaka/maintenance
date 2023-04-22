@@ -7,3 +7,5 @@ sudo du -hs --threshold=10G /storage/projects2/*;\
 python gen-report.py -i temp.txt -o ../../reports/turing-storage-usage/index.html
 rm temp.txt
 echo "Done"
+
+
