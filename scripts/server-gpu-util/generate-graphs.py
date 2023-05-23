@@ -76,7 +76,7 @@ if __name__=="__main__":
         print(s+"------------------")
         # print(data[s])
         ax = data[s].plot(y=["utilization.gpu [%]","memory.used [MiB]"],secondary_y = ["memory.used [MiB]"],ylim=(0,100),marker="*",\
-                          style={"utilization.gpu [%]":"*-r","memory.used [MiB]":"*-b"})
+                          style={"utilization.gpu [%]":"*-r","memory.used [MiB]":"*-b"},lw=0.3)
         ax.set_ylabel("utilization.gpu [%]",color="r")
         ax.right_ax.set_ylabel("memory.used [MiB]",color="b")
         ax.right_ax.set_ylim(0,JSON[s.split("-")[0]][s.split("-")[1]]["memory"])
