@@ -1,0 +1,2 @@
+scp -J servermonitoring@tesla.ce.pdn.ac.lk servermonitoring@turing.ce.pdn.ac.lk:/localhome/servermonitoring/logging/turing/*storage* ../../reports/server-storage-util/logs/;
+scp -J servermonitoring@tesla.ce.pdn.ac.lk servermonitoring@kepler.ce.pdn.ac.lk:/localhome/servermonitoring/logging/kepler/*storage* ../../reports/server-storage-util/logs/;
